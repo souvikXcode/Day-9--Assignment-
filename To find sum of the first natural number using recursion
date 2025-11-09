@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int sumOfNaturalNumbers(int n);
+
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    if (n < 1) {
+        printf("Please enter a positive integer greater than 0.\n");
+        return 0;
+    }
+
+    int sum = sumOfNaturalNumbers(n);
+
+    printf("Sum of first %d natural numbers = %d\n", n, sum);
+
+    return 0;
+}
+int sumOfNaturalNumbers(int n) {
+    if (n == 1)
+        return 1;  
+    else
+        return n + sumOfNaturalNumbers(n - 1);
+}
